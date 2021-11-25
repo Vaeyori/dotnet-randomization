@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D53792BE-E116-4291-B4A9-3619B2299B93}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		contributing.md = contributing.md
+		license.md = license.md
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".githooks", ".githooks", "{004B8459-D91E-49B9-9E8D-EF85E41339D3}"
+	ProjectSection(SolutionItems) = preProject
+		.githooks\commit-msg = .githooks\commit-msg
+		.githooks\pre-commit = .githooks\pre-commit
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{004B8459-D91E-49B9-9E8D-EF85E41339D3} = {D53792BE-E116-4291-B4A9-3619B2299B93}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9D6DFFA-2908-479B-B70D-B534A1DED545}
+	EndGlobalSection
+EndGlobal
