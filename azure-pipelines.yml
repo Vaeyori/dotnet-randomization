@@ -19,6 +19,12 @@ stages:
     - job: 'BuildJob'
       condition: eq(variables['Build.Reason'], 'PullRequest')
       steps:
+      - task: UseDotNet@2
+        displayName: 'Use .NET Core sdk'
+        inputs:
+          version: 6.0.x
+          includePreviewVersions: false
+
       - task: DotNetCoreCLI@2
         inputs:
           command: 'build'
@@ -28,10 +34,16 @@ stages:
     jobs:
     - job: 'RunUnitTests'
       steps:
+      - task: UseDotNet@2
+        displayName: 'Use .NET Core sdk'
+        inputs:
+          version: 6.0.x
+          includePreviewVersions: false
+
       - task: DotNetCoreCLI@2
         inputs:
           command: 'test'
-          projects: '//*.sln'
+          projects: '**/*.sln'
           arguments: '/p:CollectCoverage=true /p:IncludeTestAssembly=false /p:CoverletOutputFormat="json%2ccobertura" /p:CoverletOutput=$(System.DefaultWorkingDirectory)/codecoverage/ /p:MergeWith=$(System.DefaultWorkingDirectory)/codecoverage/coverage.json /p:maxcpucount=1 /p:Exclude="[xunit.*]*%2c[StackExchange.*]*"'
           publishTestResults: true
       - template: '.pipelines/.templates/publish.codecoverage.results.yml'
@@ -53,6 +65,12 @@ stages:
     - job: 'PackAndPublishToolNuget'
       condition: ne(variables['Build.Reason'], 'PullRequest')
       steps:
+      - task: UseDotNet@2
+        displayName: 'Use .NET Core sdk'
+        inputs:
+          version: 6.0.x
+          includePreviewVersions: false
+
       - task: DotNetCoreCLI@2
         inputs:
           command: 'restore'
