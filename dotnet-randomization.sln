@@ -8,7 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
 		contributing.md = contributing.md
+		GitVersion.yml = GitVersion.yml
 		license.md = license.md
 		readme.md = readme.md
 	EndProjectSection
@@ -32,6 +34,23 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vaeyori.Randomization.Abstractions", "Vaeyori.Randomization.Abstractions", "{1807EB6D-33FA-496D-B43F-106F9A5A2940}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vaeyori.Randomization.Abstractions", "src\libs\Vaeyori.Randomization.Abstractions\Vaeyori.Randomization.Abstractions.csproj", "{4DCF6A3F-BECD-4A3B-A7DE-CCB8B922DD44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".pipelines", ".pipelines", "{742D6B8E-6959-4B66-9C00-829B733FA375}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".scripts", ".scripts", "{240C4B36-9FFF-4710-B70F-B8B41B982131}"
+	ProjectSection(SolutionItems) = preProject
+		.pipelines\.scripts\run.mutation.tests.ps1 = .pipelines\.scripts\run.mutation.tests.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".templates", ".templates", "{968FBEB1-2F3A-46FF-AE34-77847989CCA1}"
+	ProjectSection(SolutionItems) = preProject
+		.pipelines\.templates\copy.from.container.yml = .pipelines\.templates\copy.from.container.yml
+		.pipelines\.templates\generate.version.yml = .pipelines\.templates\generate.version.yml
+		.pipelines\.templates\publish.codecoverage.results.yml = .pipelines\.templates\publish.codecoverage.results.yml
+		.pipelines\.templates\publish.mutation.test.results.yml = .pipelines\.templates\publish.mutation.test.results.yml
+		.pipelines\.templates\publish.test.results.yml = .pipelines\.templates\publish.test.results.yml
+		.pipelines\.templates\repository.tag.yml = .pipelines\.templates\repository.tag.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +82,9 @@ Global
 		{08E1F5BA-B712-46D3-B924-5761A1956813} = {C7DF92E1-327A-4486-8E19-3D33F541CFB9}
 		{1807EB6D-33FA-496D-B43F-106F9A5A2940} = {AF903B36-4492-471A-9E2E-B09A44CDFB4D}
 		{4DCF6A3F-BECD-4A3B-A7DE-CCB8B922DD44} = {1807EB6D-33FA-496D-B43F-106F9A5A2940}
+		{742D6B8E-6959-4B66-9C00-829B733FA375} = {D53792BE-E116-4291-B4A9-3619B2299B93}
+		{240C4B36-9FFF-4710-B70F-B8B41B982131} = {742D6B8E-6959-4B66-9C00-829B733FA375}
+		{968FBEB1-2F3A-46FF-AE34-77847989CCA1} = {742D6B8E-6959-4B66-9C00-829B733FA375}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9D6DFFA-2908-479B-B70D-B534A1DED545}
